@@ -9,7 +9,7 @@ public class Worker extends Person{
         this.salary = salary;
     }
 
-    private String getPosition() {
+    public String getPosition() {
         return position;
     }
 
@@ -17,11 +17,28 @@ public class Worker extends Person{
         return salary;
     }
 
-    private void setPosition(String position) {
+    public void setPosition(String position) {
+        if(position==null || "".equals(position))
+        {
+            return;
+        }
         this.position = position;
     }
 
-    private void setSalary(int salary) {
-        this.salary = salary;
+    public void setSalary(int salary) {
+        if(salary>0) {
+            this.salary = salary;
+        }
+        throw new RuntimeException();
+    }
+
+    public float getAnnualSalary()
+    {
+        return this.salary * 12;
+    }
+
+    public String toString()
+    {
+        return this.getName()+"    "+this.getPosition()+"("+this.getClass().getCanonicalName()+")        "+this.getSalary();
     }
 }

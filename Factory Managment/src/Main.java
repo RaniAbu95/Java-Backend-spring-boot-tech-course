@@ -82,23 +82,33 @@ public class Main {
             int l = 6000;
             int h = 10000;
             int bonus =b.nextInt(high-low) + low;
-            GeneralManager gm = new GeneralManager(MANAGERS_NAMES[i], (i+1)*5-10, randomEmail,"General Managaer",managerSalary,bonus,1000, 9000000);
+            GeneralManager gm = new GeneralManager(MANAGERS_NAMES[i], (i+1)*5-10, randomEmail,managerSalary,bonus,1000, 9000000);
+
+
             for(int k=0;k<workers.length;k++){
                 String rndEmail = generateRandomEmail();
                 double workerSalary = generateRandomSalary();
                 float floatValueSalary = (float) workerSalary;
-                Worker worker = new Worker(WORKERS_FIRST_NAMES[k]+" "+ LAST_NAMES[k], 20+k, rndEmail, String.valueOf(k), floatValueSalary);
+                Worker worker = new Worker(WORKERS_FIRST_NAMES[k]+" "+ LAST_NAMES[k], 20+k, rndEmail, "Simple employee", floatValueSalary);
                 workers[k] = worker;
+                //Worker m = new Manager(MANAGERS_NAMES[k%19], (k+1)*5-10, randomEmail,managerSalary,bonus, k%3==0);
+                //workers[k] = m;
             }
             //workers[i] = new Worker[WORKERS_FIRST_NAMES.length];
-            for(int j = 0; j < 26; j++){
-                high=80000;
-                managerSalary =s.nextInt(high-low) + low;
-                Manager m = new Manager(MANAGERS_NAMES[j%19], (j+1)*5-10, randomEmail,"Manager",managerSalary,bonus);
-                Department d = new Department(DEPARTMENTS_NAMES[j], workers, m,  FactorySpeciality.findById(j%4));
+            for(int j = 0; j < 26; j++) {
+                high = 80000;
+                managerSalary = s.nextInt(high - low) + low;
+                Manager m = new Manager(MANAGERS_NAMES[j % 19], (j + 1) * 5 - 10, randomEmail, managerSalary, bonus, j % 3 == 0);
+                Department d = new Department(DEPARTMENTS_NAMES[j], m, FactorySpeciality.findById(j % 4));
+                /*for (Worker worker : workers)
+                {
+                    d.addEmployee(worker);
+                }*/
+                d.setWorkers(workers);
                 departments[j] = d;
 
             }
+            workers[0].setPosition("Manager");
             Factory f = new Factory( registrationNumber, FACTORIES_NAMES[i%10], gm, departments);
             factories[i]=f;
         }

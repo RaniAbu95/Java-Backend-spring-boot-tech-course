@@ -13,39 +13,39 @@ public class Factory {
         this.departments = departments;
     }
 
-    private int getRegistrationNumber() {
+    public int getRegistrationNumber() {
         return registrationNumber;
     }
 
-    private String getFactoryName() {
+    public String getFactoryName() {
         return factoryName;
     }
 
-    private Department[] getDepartments() {
+    public Department[] getDepartments() {
         return departments;
     }
 
-    private GeneralManager getGeneralManager() {
+    public GeneralManager getGeneralManager() {
         return generalManager;
     }
 
-    private void setRegistrationNumber(int registrationNumber) {
+    public void setRegistrationNumber(int registrationNumber) {
         this.registrationNumber = registrationNumber;
     }
 
-    private void setFactoryName(String factoryName) {
+    public void setFactoryName(String factoryName) {
         this.factoryName = factoryName;
     }
 
-    private void setDepartments(Department[] departments) {
+    public void setDepartments(Department[] departments) {
         this.departments = departments;
     }
 
-    private void setGeneralManager(GeneralManager generalManager) {
+    public void setGeneralManager(GeneralManager generalManager) {
         this.generalManager = generalManager;
     }
 
-    private int calculateNumberOfEmployers(){
+    public int calculateNumberOfEmployers(){
         int numberOfEmployers = 0;
         for (int i =0;i<departments.length;i++){
             numberOfEmployers+=departments[i].getNumberOfEmployers();

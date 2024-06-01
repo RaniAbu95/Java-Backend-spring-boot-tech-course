@@ -1,27 +1,49 @@
 public class Manager extends Worker{
     private float annualBonus;
-    private boolean  isGeneralManager;
+    private boolean hasExtraSalary;
 
-    public Manager(String name, int age, String email,String position, float salary,float annualBonus) {
-        super(name, age, email, position, salary);
+
+    public Manager(String name, int age, String email,  float salary, float annualBonus, boolean hasExtraSalary) {
+        super(name, age, email, "Department Manager", salary);
         this.annualBonus = annualBonus;
+        this.hasExtraSalary = hasExtraSalary;
     }
 
-    private float getAnnualBonus() {
+    public float getAnnualBonus() {
         return annualBonus;
     }
 
-    private boolean isGeneralManager() {
-        return isGeneralManager;
-    }
 
-    private void setAnnualBonus(float annualBonus) {
+    public void setAnnualBonus(float annualBonus) {
         this.annualBonus = annualBonus;
     }
 
-    private void setGeneralManager(boolean generalManager) {
-        isGeneralManager = generalManager;
+    @Override
+    public float getAnnualSalary()
+    {
+        float delta = annualBonus;
+        if(this.hasExtraSalary)
+        {
+            delta += getSalary();
+        }
+        return super.getAnnualSalary()+ delta;
     }
 
+    public boolean isHasExtraSalary() {
+        return hasExtraSalary;
+    }
 
+    public void setHasExtraSalary(boolean hasExtraSalary) {
+        this.hasExtraSalary = hasExtraSalary;
+    }
+
+    @Override
+    public String toString() {
+        String data = super.toString();
+        if(hasExtraSalary)
+        {
+            data+= " (with extra salary of "+this.getSalary()+")";
+        }
+        return data;
+    }
 }
