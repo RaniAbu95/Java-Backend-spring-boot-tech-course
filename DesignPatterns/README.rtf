@@ -1,0 +1,58 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fmodern\fcharset0 Courier;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww38200\viewh21040\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+before running the project you will have to add the PostgreSQL JDBC driver to your project using the following steps:\
+\
+In IntelliJ IDEA, right-click on your project in the Project Explorer (or Package Explorer) panel.\
+Select "Open Module Settings" (or press 
+\f1\fs26 F4
+\f0\fs24 ).\
+In the Project Structure dialog, navigate to the "Libraries" tab.\
+Click on the 
+\f1\fs26 +
+\f0\fs24  button and choose "Java" or "From Maven..." depending on where you downloaded the JDBC driver JAR file.\
+select the postgresql-42.7.3.jar file\
+Click "OK" to add the driver JAR to your project.\
+\
+*****************\outl0\strokewidth0 *********************************************************************************************************************\outl0\strokewidth0 \strokec2 \
+\
+The program allows users to interact with the system, choose a data source (file, MySQL, or MongoDB), and perform various operations related to managing animals.\
+\
+## Usage\
+\
+1. **Choose Data Source:**\
+   - Users are prompted to select a data source: file (1), MySQL (2), or MongoDB (3).\
+     - If they choose MySQL, they are asked to provide the database name.\
+\
+2. **Menu Options:**\
+   - Users can perform the following operations:\
+     1. Adding a new animal\
+     2. Printing all animals from the database\
+     3. Importing from a file (not supported)\
+     4. Deleting data (all or one row)\
+     5. Exiting the application\
+\
+## Database Connection Details\
+\
+To connect to the MySQL database, the user needs to provide the following details:\
+- Host: `localhost`\
+- Port: `5433`\
+- Database Name: java_spring_boot_course\
+- Username: 
+\f2\fs22 \cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 postgres
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec2 \
+- Password: 852963\
+\pard\pardeftab720\partightenfactor0
+\cf0 \outl0\strokewidth0 \
+note: The table name that already exists in my db called \'93animals\'94, you can choose whether you want to continue editing this table or create a new one from scratch.\
+\
+**************************************************************************************************************************************}
