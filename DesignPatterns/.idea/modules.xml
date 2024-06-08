@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Builder/Builder.iml" filepath="$PROJECT_DIR$/Builder/Builder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DAODesignPattern/DAODesignPattern.iml" filepath="$PROJECT_DIR$/DAODesignPattern/DAODesignPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FactoryDesignPattern/FactoryDesignPattern.iml" filepath="$PROJECT_DIR$/FactoryDesignPattern/FactoryDesignPattern.iml" />
+    </modules>
+  </component>
+</project>
